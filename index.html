@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Experience</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Video background -->
+    <video autoplay muted loop id="backgroundVideo">
+        <source src="space.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <header>
+        <div class="logo">
+            <a href="index.html">SPACE</a> <!-- SPACE clickable logo -->
+        </div>
+        <div class="menu-icon">&#9776;</div>
+        <nav>
+            <ul class="mobile-hidden">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#">Explore the Space</a>
+                    <ul class="dropdown-content">
+                        <li><a href="sun.html">Sun</a></li>
+                        <li><a href="mercury.html">Mercury</a></li>
+                        <li><a href="venus.html">Venus</a></li>
+                        <li><a href="earth.html">Earth</a></li>
+                        <li><a href="mars.html">Mars</a></li>
+                        <li><a href="jupiter.html">Jupiter</a></li>
+                        <li><a href="saturn.html">Saturn</a></li>
+                        <li><a href="uranus.html">Uranus</a></li>
+                        <li><a href="neptune.html">Neptune</a></li>
+                        <li><a href="pluto.html">Pluto</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Footer -->
+    <footer>
+        <p>PATEL &copy; 2024 &nbsp; | &nbsp; <a href="privacy.html">Privacy Policy</a></p>
+    </footer>
+
+    <!-- Link to JS file -->
+    <script src="app.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const menuIcon = document.querySelector(".menu-icon");
+            const navMenu = document.querySelector("nav ul");
+    
+            menuIcon.addEventListener("click", function() {
+                navMenu.classList.toggle("active");
+            });
+        });
+    </script>
+</body>
+</html>

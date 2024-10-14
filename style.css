@@ -1,0 +1,375 @@
+@font-face {
+    font-family: 'SpaceX';
+    src: url('fonts/Spacefont.ttf') format('opentype');
+}
+
+/* Full-screen background video */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family: 'Arial', sans-serif;
+    color: white;
+    overflow-y: auto; /* Allow vertical scrolling */
+}
+
+video#backgroundVideo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Header: Centering the SPACE logo */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Center the logo */
+    align-items: center;
+    padding: 1.5rem 0;
+    z-index: 10;
+}
+
+/* Logo styling */
+header .logo-centered a {
+    font-family: 'SpaceX', sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    text-decoration: none;
+}
+
+.logo {
+    font-family: 'SpaceX', sans-serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.15rem;
+    color: white;
+}
+
+.logo a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Navigation menu aligned to the right */
+nav {
+    margin-left: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    gap: 2rem;
+    margin-right: 2rem;
+}
+
+nav ul li {
+    position: relative;
+    padding-right: 1rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+/* Adding the pseudo-element for the underline effect */
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    bottom: -2px; /* Position the line just under the text */
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+/* Hover effect: expand the underline from left to right */
+nav ul li a:hover::before {
+    width: 100%;
+}
+
+nav ul li a:hover {
+    color: whitesmoke; /* Color change when hovering */
+}
+
+/* Main headline */
+.main-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.main-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+
+.main-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.main-content a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: white;
+    border: 1px solid white;
+    padding: 0.8rem 2rem;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.main-content a:hover {
+    background-color: white;
+    color: black;
+}
+
+/* Footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+    color: white;
+    z-index: 10;
+}
+
+/* Styling the Privacy Policy link */
+footer a {
+    text-decoration: none;
+    color: white;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+footer a:hover {
+    border-bottom: 2px solid white;
+}
+
+/* Underline effect in the footer similar to the nav */
+footer a::before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+footer a:hover::before {
+    width: 100%;
+}
+
+/* Dropdown menu */
+nav ul li .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    z-index: 1;
+}
+
+nav ul li:hover .dropdown-content {
+    display: block;
+}
+
+/* Dropdown menu */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(51, 51, 51, 0.9);
+    min-width: 160px;
+    z-index: 1;
+    list-style-type: none;
+    padding: 0;
+}
+
+.dropdown-content li a {
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+/* Different hover effects for each planet */
+.mercury-hover:hover a {
+    background-color: #b0c4de; /* Light steel blue for Mercury */
+}
+
+.venus-hover:hover a {
+    background-color: #ffcc33; /* Yellow for Venus */
+}
+
+.earth-hover:hover a {
+    background-color: #3cb371; /* Medium sea green for Earth */
+}
+
+.mars-hover:hover a {
+    background-color: #ff4500; /* Orange red for Mars */
+}
+
+.jupiter-hover:hover a {
+    background-color: #d2691e; /* Chocolate for Jupiter */
+}
+
+.saturn-hover:hover a {
+    background-color: #f4a460; /* Sandy brown for Saturn */
+}
+
+.uranus-hover:hover a {
+    background-color: #40e0d0; /* Turquoise for Uranus */
+}
+
+.neptune-hover:hover a {
+    background-color: #4682b4; /* Steel blue for Neptune */
+}
+
+.pluto-hover:hover a {
+    background-color: #dda0dd; /* Plum color for Pluto */
+}
+
+.content-wrapper {
+    padding: 8rem 2rem 4rem;
+    max-width: 800px;
+    margin: 0 auto;
+    height: auto; /* Ensure content fits without scrolling */
+}
+
+/* Privacy content section */
+.privacy-content h1, .privacy-content h2, .privacy-content p {
+    margin-bottom: 1.5rem;
+}
+
+.privacy-content ul {
+    margin-bottom: 2rem;
+    list-style: disc;
+    padding-left: 2rem;
+}
+
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    min-width: 160px;
+    z-index: 1;
+    padding: 0;
+}
+
+.dropdown-content li {
+    list-style: none;
+}
+
+.dropdown-content li a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content li a:hover {
+    background-color: #555;
+}
+
+/* Show the dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Hamburger Menu Icon */
+.menu-icon {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: white;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+}
+
+/* Show the menu icon on mobile */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.9);
+        padding: 20px;
+        border-radius: 10px;
+        z-index: 1000;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+}
+
+/* Desktop view - Show nav normally */
+@media (min-width: 769px) {
+    nav ul {
+        display: flex;
+        justify-content: flex-end;
+        gap: 2rem;
+        margin-right: 2rem;
+    }
+
+    .menu-icon {
+        display: none;
+    }
+}
+
+/* Nav link styling */
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+/* Main headline */
+.main-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
